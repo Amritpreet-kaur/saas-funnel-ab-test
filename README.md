@@ -75,6 +75,11 @@ Assuming a standard SaaS price point of $20/month ($240/year), rolling this feat
 2. Ensure Anaconda is installed with an environment containing `pandas`, `numpy`, and `statsmodels`.
 3. Open `scripts/saas_ab_test_analysis.py` in Spyder and execute to reproduce the data cleaning, time-series extraction, A/B group assignments, and Z-test calculations.
 
+## Caveats & Business Assumptions
+* **Simulated Environment:** While baseline volume and timestamps are derived from real-world clickstream data, the A/B group assignments and Variant lift were synthetically modeled in Python to demonstrate experimental evaluation frameworks. 
+* **Lead Quality Degradation:** The ARR projection assumes the Trial-to-Paid rate remains constant at 84.01%. In a live production environment, drastically reducing top-of-funnel friction (1-click sign-up) often introduces lower-intent users, which would likely depress the downstream Trial-to-Paid conversion rate. 
+* **Statistical Power:** A real-world deployment of this test would require an upfront Power Analysis to define the Minimum Detectable Effect (MDE) and strict time horizons to prevent p-value hacking.
+
 ---
 *Designed & Analyzed by **Amrit Preet Kaur***  
 *M.S. Data Science & Business Intelligence | [Connect on LinkedIn](https://www.linkedin.com/in/amritpreetkaur-)*
